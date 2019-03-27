@@ -1,0 +1,60 @@
+ import pygame
+import sys
+import os
+pygame.init()
+
+screen_width = 640
+screen_height = 540
+
+black = (0,0,0)
+white = (255,255,255)
+red = (255,0,0)
+green = (0,255,0)
+blue = (0,0,255)
+
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption('Big Time Tim')
+RunningTim = pygame.image.load('RunningTim.png')
+Background = pygame.image.load('Background.png')
+Hurdle = pygame.image.load('ShortHurdle.png')
+#done = False
+
+def tim(xtim,ytim):
+    screen.blit(RunningTim, (xtim,ytim))
+#add to x moves right, add to y moves down (0,0) is top left
+xtim = (screen_width * 0.05)
+ytim = (screen_height * 0.55)
+
+def background(xback,yback):
+    screen.blit(Background, (xback,yback))
+xback = (screen_width * 0)
+yback = (screen_height * 0)
+
+class enemy(pygame.sprite.Sprite): 
+    def hurdle(xhurdle,yhurdle,velx):
+        velx = 1
+        while velx > .1
+            xhurdle = (screen_width * velx)
+            yhurdle = (screen_height * 0.60)
+            velx -= 0.1
+#this whole enemy hurdle section is not finished, we still need spawning, movement towards tim and collisions with tim
+
+
+
+
+run = True
+while run:
+    pygame.time.delay(100)
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+
+    screen.fill(green)
+    background(xback,yback)
+    tim(xtim,ytim)
+
+
+    pygame.display.flip()   
+pygame.quit
+
